@@ -8,16 +8,16 @@ class Difficulty1Katas {
          * Task :
          *   Given a year, return the century it is in.
          */
-        fun century(number: Int): Int {
-            return 0
+        fun century(number: Int): Int = when {
+            (number <= 0) -> 0
+            (number % 100 == 0) -> number / 100
+            else -> number / 100 + 1
         }
 
         /**
          * Very simple, given a number, find its opposite.
          */
-        fun opposite(number: Int): Int {
-            return 0
-        }
+        fun opposite(number: Int): Int = -number
 
         /**
          * Given an array of integers your solution should find the smallest integer.
@@ -25,7 +25,7 @@ class Difficulty1Katas {
          * You can assume, for the purpose of this kata, that the supplied array will not be empty.
          */
         fun findSmallestInt(nums: List<Int>): Int {
-            return 0
+            return nums.min()!!
         }
 
         /**

@@ -9,15 +9,8 @@ import org.junit.Test
 class Difficulty1KatasTest {
 
     @Test
-    fun testCentury() {
-        val century = century(1)
-        assertThat(century, `is`(0))
-    }
-
-    @Test
-    fun testOpposite() {
-        val opposite = opposite(1)
-        assertThat(opposite, `is`(0))
+    fun test() {
+        assertThat(true, `is`(true))
     }
 
 }
