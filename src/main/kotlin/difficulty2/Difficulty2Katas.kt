@@ -8,7 +8,8 @@ class Difficulty2Katas {
          * Two red beads are placed between every two blue beads. There are N blue beads. After looking at the arrangement below work out the number of red beads.
          */
         fun countRedBeads(nBlue: Int): Int {
-            return nBlue
+            return if (nBlue < 2 ) 0
+            else nBlue * 2 - 2
         }
 
         /**
