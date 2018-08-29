@@ -35,22 +35,18 @@ class Difficulty1Katas {
          *  The number can be negative already, in which case no change is required.
          *  Zero (0) is not checked for any specific sign. Negative zeros make no mathematical sense.
          */
-        fun makeNegative(x: Int): Int {
-            return 0
-        }
+        fun makeNegative(x: Int): Int = if (x < 1) x else -x
 
         /**
          * This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
          */
-        fun simpleMultiplication(n: Int): Int {
-            return 0
-        }
+        fun simpleMultiplication(n: Int): Int = if (n % 2 == 0) n * 8 else n * 9
 
         /**
          * Replace all vowel to exclamation mark in the sentence. aeiouAEIOU is vowel.
          */
         fun replace(s: String): String {
-            return ""
+            return s.replace(Regex("[aeiouAEIOU]"),"!")
         }
 
         /**
@@ -71,7 +67,18 @@ class Difficulty1Katas {
          *   +5 dog years for each year after that
          */
         fun calculateYears(years: Int): Array<Int> {
-            return arrayOf(0, 0, 0);
+            val humanYears = years
+            val catYears = when {
+                years == 1 -> 15
+                years == 2 -> 24
+                else -> 4 * (years - 2) + 24
+            }
+            val dogYears = when {
+                years == 1 -> 15
+                years == 2 -> 24
+                else -> 5 * (years - 2) + 24
+            }
+            return arrayOf(humanYears, catYears, dogYears);
         }
     }
 }
